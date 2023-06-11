@@ -1,8 +1,9 @@
 version: "3.8"
+
 services:
   kohya-ss-gui:
     container_name: kohya-ss-gui
-    image: kohya-ss-gui:latest
+    image: jasongilholme/kohya-ss-gui-w-data:latest
     build:
       context: .
     ports:
@@ -12,15 +13,17 @@ services:
     environment:
       CLI_ARGS: ""
       SAFETENSORS_FAST_GPU: 1
+      LOCAL_FILES_ONLY: 1
     tmpfs:
-      - /tmp      
+      - /tmp
     volumes:
       - ./dataset:/dataset
-      - ./.cache/user:/home/appuser/.cache
-      - ./.cache/triton:/home/appuser/.triton    
-      - ./.cache/config:/app/appuser/.config
-      - ./.cache/nv:/home/appuser/.nv 
-      - ./.cache/keras:/home/appuser/.keras      
+#      - ./.cache/homedir:/home/appuser
+#      - ./.cache/user:/home/appuser/.cache
+#      - ./.cache/triton:/home/appuser/.triton
+#      - ./.cache/config:/home/appuser/.config
+#      - ./.cache/nv:/home/appuser/.nv
+#      - ./.cache/keras:/home/appuser/.keras
     deploy:
       resources:
         reservations:

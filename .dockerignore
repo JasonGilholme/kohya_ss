@@ -1,7 +1,9 @@
-.cache/
+.cache*/
 cudnn_windows/
 bitsandbytes_windows/
 bitsandbytes_windows_deprecated/
 dataset/
 __pycache__/
 venv/
+.tmp
+models/

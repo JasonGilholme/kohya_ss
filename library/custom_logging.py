@@ -23,7 +23,7 @@ def setup_logging(clean=False, debug=False):
     except:
         pass
     
-    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s | %(levelname)s | %(pathname)s | %(message)s', filename='setup.log', filemode='a', encoding='utf-8', force=True)
+    logging.basicConfig(level=logging.DEBUG, format='%(asctime)s | %(levelname)s | %(pathname)s | %(message)s', filename='setup.log', filemode='a', force=True) # encoding='utf-8',
     
     console = Console(log_time=True, log_time_format='%H:%M:%S-%f', theme=Theme({
         "traceback.border": "black",
